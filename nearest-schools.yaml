@@ -14,27 +14,26 @@ paths:
         based on the specified search parameters.
       parameters:
         - in: query
-          name: latitude
-          description: The latitude of the search location.
+          name: lat
+          description: Latitude of enquiry location (WGS84)
           required: true
           schema:
             type: number
             format: float
         - in: query
-          name: longitude
-          description: The longitude of the search location.
+          name: long
+          description: Longitude of enquiry location (WGS84)
           required: true
           schema:
             type: number
             format: float
         - in: query
-          name: radius
-          description: The search radius in meters (default is 500).
+          name: max
+          description: Maximum number of results returned (default:all, limit:100)
           required: false
           schema:
             type: integer
             format: int32
-            default: 500
       responses:
         "200":
           description: OK

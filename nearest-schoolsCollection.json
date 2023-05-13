@@ -1,0 +1,201 @@
+{
+    "item": [
+        {
+            "id": "4e076e22-c02d-4ab6-8aba-bb7f49187071",
+            "name": "Returns a list of the nearest schools to a given location.",
+            "request": {
+                "name": "Returns a list of the nearest schools to a given location.",
+                "description": {
+                    "content": "This endpoint returns a list of the nearest schools to a given location, based on the specified search parameters.\n",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "nearest-schools"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [
+                        {
+                            "disabled": false,
+                            "key": "lat",
+                            "value": "{{lat}}",
+                            "description": "(Required) Latitude of enquiry location (WGS84)"
+                        },
+                        {
+                            "disabled": false,
+                            "key": "long",
+                            "value": "{{long}}",
+                            "description": "(Required) Longitude of enquiry location (WGS84)"
+                        },
+                        {
+                            "disabled": false,
+                            "key": "max",
+                            "value": "35737549",
+                            "description": "Maximum number of results returned (default:all, limit:100)"
+                        }
+                    ],
+                    "variable": []
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "method": "GET",
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "0a8a6665-ed91-48c5-af6f-239f6147a602",
+                    "name": "OK",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "nearest-schools"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "lat",
+                                    "value": "-72849108.9332083"
+                                },
+                                {
+                                    "key": "long",
+                                    "value": "-72849108.9332083"
+                                },
+                                {
+                                    "key": "max",
+                                    "value": "35737549"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "body": "{\n  \"schools\": [\n    {\n      \"name\": \"incididunt laborum voluptate aliqua\",\n      \"address\": \"laborum ut reprehenderit\",\n      \"distance\": -24649633.47092773\n    },\n    {\n      \"name\": \"et tempor officia adipisicing eiusmod\",\n      \"address\": \"est quis dolor dolore\",\n      \"distance\": -77051848.88154504\n    }\n  ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "6f02cd46-8419-4cc2-89e8-590916f736e7",
+                    "name": "Bad Request",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "nearest-schools"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "lat",
+                                    "value": "-72849108.9332083"
+                                },
+                                {
+                                    "key": "long",
+                                    "value": "-72849108.9332083"
+                                },
+                                {
+                                    "key": "max",
+                                    "value": "35737549"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Bad Request",
+                    "code": 400,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "body": "{\n  \"error\": \"non et ut est\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "0326f174-6816-4168-9396-5adf54ab0996",
+                    "name": "Internal Server Error",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "nearest-schools"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "lat",
+                                    "value": "-72849108.9332083"
+                                },
+                                {
+                                    "key": "long",
+                                    "value": "-72849108.9332083"
+                                },
+                                {
+                                    "key": "max",
+                                    "value": "35737549"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Internal Server Error",
+                    "code": 500,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "body": "{\n  \"error\": \"ut dolor ipsum\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        }
+    ],
+    "event": [],
+    "variable": [
+        {
+            "type": "string",
+            "value": "https://api.data.gov.hk/v1",
+            "key": "baseUrl"
+        }
+    ],
+    "info": {
+        "_postman_id": "55125da2-f97f-4324-a95d-39a25682133f",
+        "name": "Nearest Schools API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": {
+            "content": "Returns a list of the nearest schools to a given location.",
+            "type": "text/plain"
+        }
+    }
+}

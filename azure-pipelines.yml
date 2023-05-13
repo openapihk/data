@@ -1,0 +1,19 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  name: Default
+
+stages:
+- stage: schema_validation
+  displayName: 'Validate schema from API server'
+  jobs:
+  - job: test
+    steps:
+    - script: |
+        newman run --verbose nearest-schoolsCollection.json -d nearest-schools-test-data.json
