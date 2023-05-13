@@ -10,6 +10,13 @@ pool:
   name: Default
 
 stages:
+- stage: api_live
+  displayName: 'Validate the yaml and generate the collection'
+  jobs:
+  - job: test
+    steps:
+    - script: |
+        portman -l nearest-schools.yaml -c portman-config.json
 - stage: schema_validation
   displayName: 'Validate schema from API server'
   jobs:

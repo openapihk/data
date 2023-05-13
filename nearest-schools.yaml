@@ -1,8 +1,18 @@
 openapi: 3.0.0
+externalDocs:
+  url: https://data.gov.hk/en-data/dataset/hk-edb-schinfo-school-location-and-information
 info:
   title: Nearest Schools API
   description: Returns a list of the nearest schools to a given location.
   version: 1.0.0
+  contact:
+    name: Neo Alienson
+    email: 'neo@01man.com'
+    url: https://openapihk.github.io/portal
+  termsOfService: https://openapihk.github.io/misc/terms_of_service.html
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html  
 servers:
   - url: https://api.data.gov.hk/v1
 paths:
