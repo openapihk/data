@@ -1,0 +1,80 @@
+openapi: 3.0.0
+info:
+  title: Nearest Schools API
+  description: Returns a list of the nearest schools to a given location.
+  version: 1.0.0
+servers:
+  - url: https://api.data.gov.hk/v1
+paths:
+  /nearest-schools:
+    get:
+      summary: Returns a list of the nearest schools to a given location.
+      description: >
+        This endpoint returns a list of the nearest schools to a given location,
+        based on the specified search parameters.
+      parameters:
+        - in: query
+          name: latitude
+          description: The latitude of the search location.
+          required: true
+          schema:
+            type: number
+            format: float
+        - in: query
+          name: longitude
+          description: The longitude of the search location.
+          required: true
+          schema:
+            type: number
+            format: float
+        - in: query
+          name: radius
+          description: The search radius in meters (default is 500).
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 500
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  schools:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: The name of the school.
+                        address:
+                          type: string
+                          description: The address of the school.
+                        distance:
+                          type: number
+                          format: float
+                          description: The distance between the search location and the school in meters.
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: An error message indicating the reason for the bad request.
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: An error message indicating the reason for the internal server error.
